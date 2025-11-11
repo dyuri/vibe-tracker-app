@@ -12,8 +12,8 @@
    - Android SDK Build-Tools
 
 3. **Java Development Kit (JDK)**
-   - JDK 17 or JDK 21 recommended
-   - The project uses Gradle 8.5 which supports Java 21
+   - JDK 17, JDK 21, or JDK 25 recommended
+   - The project uses Gradle 8.10.2 which supports Java 17-25
 
 ## Setup
 
@@ -145,9 +145,10 @@ After installing the app:
 #### "Could not determine java version from '21.0.8'" or similar Gradle errors
 
 This means your Gradle version doesn't recognize your Java version. The project is configured for:
-- Gradle 8.5 (supports Java 17-21)
-- Android Gradle Plugin 8.2.2
-- Java 17 or Java 21
+- Gradle 8.10.2 (supports Java 17-25)
+- Android Gradle Plugin 8.7.3
+- Kotlin 2.0.21
+- Java 17, 21, or 25
 
 If you still get this error, try:
 ```bash
@@ -247,4 +248,8 @@ For reliable background tracking:
 - Location updates are sent as GeoJSON to `/api/track` endpoint
 - Failed uploads are logged (retry logic can be added)
 - Minimum Android SDK: 24 (Android 7.0)
-- Target Android SDK: 34 (Android 14)
+- Target Android SDK: 35 (Android 15)
+- Gradle: 8.10.2
+- Android Gradle Plugin: 8.7.3
+- Kotlin: 2.0.21
+- Java: 17+ (tested with 17, 21, and 25)
