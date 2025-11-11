@@ -1,0 +1,38 @@
+name: vibe_tracker_mobile
+description: Mobile location tracking app for Vibe Tracker
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Location tracking
+  geolocator: ^10.1.0
+  permission_handler: ^11.0.1
+
+  # Background service
+  flutter_background_service: ^5.0.5
+  flutter_background_service_android: ^6.2.2
+
+  # HTTP client
+  http: ^1.1.0
+
+  # Secure storage
+  flutter_secure_storage: ^9.0.0
+
+  # State management
+  provider: ^6.1.1
+
+  # UI
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
