@@ -147,7 +147,7 @@ After installing the app:
 This means your Gradle version doesn't recognize your Java version. The project is configured for:
 - Gradle 8.10.2 (supports Java 17-25)
 - Android Gradle Plugin 8.7.3
-- Kotlin 2.0.21
+- Kotlin 2.1.0
 - Java 17, 21, or 25
 
 If you still get this error, try:
@@ -251,5 +251,5 @@ For reliable background tracking:
 - Target Android SDK: 35 (Android 15)
 - Gradle: 8.10.2
 - Android Gradle Plugin: 8.7.3
-- Kotlin: 2.0.21
+- Kotlin: 2.1.0
 - Java: 17+ (tested with 17, 21, and 25)
