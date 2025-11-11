@@ -159,6 +159,45 @@ flutter pub get
 flutter build apk
 ```
 
+#### "Execution failed for task ':gradle:compileKotlin'" or "NoSuchFileException" with kotlin-compiler
+
+This is a Kotlin compiler cache corruption issue. Fix it by cleaning all caches:
+
+```bash
+# Clean Flutter cache
+flutter clean
+
+# Clean Gradle cache
+cd android
+./gradlew clean
+cd ..
+
+# If that doesn't work, delete build directories
+rm -rf build/
+rm -rf android/.gradle/
+rm -rf android/app/build/
+
+# Also clean Flutter's Gradle cache (if you have permissions)
+rm -rf $FLUTTER_ROOT/packages/flutter_tools/gradle/.gradle/
+
+# Then rebuild
+flutter pub get
+flutter build apk
+```
+
+If you don't have permissions to delete Flutter's internal cache, try:
+```bash
+# Kill any running Gradle daemons
+cd android
+./gradlew --stop
+cd ..
+
+# Clean and rebuild
+flutter clean
+flutter pub get
+flutter build apk
+```
+
 #### General build errors
 
 ```bash
