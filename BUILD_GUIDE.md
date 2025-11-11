@@ -13,7 +13,7 @@
 
 3. **Java Development Kit (JDK)**
    - JDK 17 or JDK 21 recommended
-   - The project uses Gradle 8.2 which supports Java 21
+   - The project uses Gradle 8.5 which supports Java 21
 
 ## Setup
 
@@ -145,7 +145,7 @@ After installing the app:
 #### "Could not determine java version from '21.0.8'" or similar Gradle errors
 
 This means your Gradle version doesn't recognize your Java version. The project is configured for:
-- Gradle 8.2 (supports Java 17-21)
+- Gradle 8.5 (supports Java 17-21)
 - Android Gradle Plugin 8.2.2
 - Java 17 or Java 21
 
