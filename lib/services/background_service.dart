@@ -62,6 +62,8 @@ class BackgroundTrackingService {
   static void onStart(ServiceInstance service) async {
     DartPluginRegistrant.ensureInitialized();
 
+    Timer? locationTimer;
+
     if (service is AndroidServiceInstance) {
       service.on('setAsForeground').listen((event) {
         service.setAsForegroundService();
@@ -73,6 +75,7 @@ class BackgroundTrackingService {
     }
 
     service.on('stop').listen((event) {
+      locationTimer?.cancel();
       service.stopSelf();
     });
 
@@ -91,12 +94,7 @@ class BackgroundTrackingService {
       accessToken: settings.accessToken!,
     );
 
-    Timer.periodic(Duration(seconds: settings.trackingIntervalSeconds), (timer) async {
-      if (!await service.isRunning()) {
-        timer.cancel();
-        return;
-      }
-
+    locationTimer = Timer.periodic(Duration(seconds: settings.trackingIntervalSeconds), (timer) async {
       try {
         // Get current position
         final position = await Geolocator.getCurrentPosition(
